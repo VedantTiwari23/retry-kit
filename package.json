@@ -1,0 +1,57 @@
+{
+  "name": "@vedant_/retry-kit",
+  "version": "1.0.0",
+  "description": "A tiny but powerful library to retry async functions with exponential backoff, jitter, timeouts, and cancellation.",
+  "keywords": [
+    "retry",
+    "exponential-backoff",
+    "jitter",
+    "timeout",
+    "abort",
+    "async",
+    "promise",
+    "resilience",
+    "fetch",
+    "http"
+  ],
+  "license": "MIT",
+  "author": "vedant_",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VedantTiwari23/retry-kit"
+  },
+  "bugs": {
+    "url": "https://github.com/VedantTiwari23/retry-kit/issues"
+  },
+  "homepage": "https://github.com/VedantTiwari23/retry-kit#readme",
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "module",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs"
+    }
+  },
+  "files": [
+    "dist/",
+    "index.d.ts",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test test/retry.test.js",
+    "test:coverage": "node --test --experimental-test-coverage test/retry.test.js",
+    "prepublishOnly": "npm run build && npm test"
+  }
+}
